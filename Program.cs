@@ -28,11 +28,21 @@ while (choice != 3)
 
             // Show the encoded result.
             Console.WriteLine($"Encoded message: {encodedMessage}");
+			
             break;
 
         case 2:
             Console.Write("Enter the message to decode: ");
             string messageToDecode = Console.ReadLine()!;
+            // Create an object from MessageDecoder.
+            MessageDecoder decoder = new MessageDecoder();
+
+            // Send the message to the Decode method.
+            string decodedMessage = decoder.Decode(messageToDecode);
+
+            // Show the decoded result.
+            Console.WriteLine($"Decoded message: {decodedMessage}");
+
             break;
 
         case 3:
