@@ -9,16 +9,15 @@ while (choice != 3)
     Console.WriteLine("1. Encode a message");
     Console.WriteLine("2. Decode a message");
     Console.WriteLine("3. Exit");
-    Console.Write("Enter your choice: ");
 
-    choice = Convert.ToInt32(Console.ReadLine());
+    choice = InputHelper.GetChoice();
 
     // Handle the user's choice.
     switch (choice)
     {
         case 1:
             Console.Write("Enter the message to encode: ");
-            string messageToEncode = Console.ReadLine()!;
+            string messageToEncode = InputHelper.GetMessage();
 
             // Create an object from MessageEncoder.
             MessageEncoder encoder = new MessageEncoder();
@@ -28,12 +27,12 @@ while (choice != 3)
 
             // Show the encoded result.
             Console.WriteLine($"Encoded message: {encodedMessage}");
-			
             break;
 
         case 2:
             Console.Write("Enter the message to decode: ");
-            string messageToDecode = Console.ReadLine()!;
+            string messageToDecode = InputHelper.GetMessage();
+
             // Create an object from MessageDecoder.
             MessageDecoder decoder = new MessageDecoder();
 
@@ -42,7 +41,6 @@ while (choice != 3)
 
             // Show the decoded result.
             Console.WriteLine($"Decoded message: {decodedMessage}");
-
             break;
 
         case 3:
